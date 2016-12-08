@@ -53,7 +53,7 @@ service := micro.NewService(
 
 Register the plugin before building Micro
 
-```
+```go
 package main
 
 import (
