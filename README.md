@@ -49,6 +49,31 @@ service := micro.NewService(
 )
 ```
 
+### With Toolkit
+
+Register the plugin before building Micro
+
+```
+package main
+
+import (
+	"github.com/micro/micro/plugin"
+	"github.com/aws/aws-sdk-go/service/xray"
+	"github.com/micro/go-plugins/micro/trace/awsxray"
+)
+
+func init() {
+	plugin.Register(awsxray.NewXRayPlugin(
+		// Used as segment name
+		awsxray.WithName("go.micro.http"),
+		// Specify X-Ray Daemon Address
+		awsxray.WithDaemon("localhost:2000"),
+		// Or X-Ray Client
+		awsxray.WithClient(xray.New(awsSession)),
+	))
+}
+```
+
 ## Example
 
 <p align="center">
