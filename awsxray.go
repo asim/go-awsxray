@@ -50,7 +50,6 @@ func (x *AWSXRay) Record(s *Segment) error {
 
 func New(opts ...Option) *AWSXRay {
 	options := Options{
-		Name:   "go.awsxray.lib",
 		Daemon: "localhost:2000",
 	}
 

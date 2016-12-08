@@ -9,18 +9,9 @@ type Options struct {
 	Client *xray.XRay
 	// Daemon address when using UDP
 	Daemon string
-	// Name of segments e.g the service
-	Name string
 }
 
 type Option func(o *Options)
-
-// WithName sets the name used for each segment. Use Service Name
-func WithName(name string) Option {
-	return func(o *Options) {
-		o.Name = name
-	}
-}
 
 // WithClient sets the XRay Client to use to send segments
 func WithClient(x *xray.XRay) Option {

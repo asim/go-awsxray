@@ -7,8 +7,6 @@ Go AWS X-Ray is a library to help simplify usage of AWS X-Ray for Micro
 ```go
 // create xray client
 xray := awsxray.New(
-        // Used as segment name
-        awsxray.WithName("go.micro.srv.greeter"),
         // Specify X-Ray Daemon Address
         awsxray.WithDaemon("localhost:2000"),
         // Or X-Ray Client
