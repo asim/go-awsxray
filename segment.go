@@ -1,6 +1,12 @@
 package awsxray
 
+import (
+	"sync"
+)
+
 type Segment struct {
+	// user expected to protect changes
+	sync.RWMutex
 	Name      string  `json:"name,omitempty"`
 	Type      string  `json:"type,omitempty"`
 	Id        string  `json:"id,omitempty"`

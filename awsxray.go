@@ -21,10 +21,13 @@ var (
 
 func (x *AWSXRay) Record(s *Segment) error {
 	// marshal
+	s.RLock()
 	b, err := json.Marshal(s)
 	if err != nil {
+		s.RUnlock()
 		return err
 	}
+	s.RUnlock()
 
 	// Use XRay Client if available
 	if x.Options.Client != nil {
