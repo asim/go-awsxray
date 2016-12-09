@@ -1,4 +1,4 @@
-# Go AWS X-Ray
+# Go AWS X-Ray [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![GoDoc](https://godoc.org/github.com/micro/micro?status.svg)](https://godoc.org/github.com/micro/go-awsxray)
 
 Go AWS X-Ray is a library to help simplify usage of AWS X-Ray for Micro
 
